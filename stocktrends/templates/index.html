@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Stock Trend Screener</title>
+
+</head>
+<body>
+    <div class="container">
+    <h2>📈 Indian Stock Market Predictor</h2>
+    <h1>Welcome to the Stock Trend Screener</h1>
+    <p>This application helps you analyze and predict stock trends using advanced algorithms.</p>
+
+    <form method="POST" action="/result/">
+        {% csrf_token %}
+        <input
+    type="text"
+    id="symbolInput"
+    name="symbol"
+    placeholder="Enter NSE stock symbol (e.g. TCS)"
+    autocomplete="off"
+    required
+>
+
+        <ul id="stockList" class="stock-list">
+    <li>TCS </li>
+    <li>INFY</li>
+    <li>RELIANCE</li>
+    <li>HDFCBANK</li>
+    <li>ICICIBANK</li>
+    <li>SBIN</li>
+    <li>ITC</li>
+    <li>LT</li>
+    <li>AXISBANK</li>
+    <li>WIPRO</li>
+</ul>
+
+        <button id='predict-button' type="submit">Predict</button>
+    </form>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</div>
+<script>
+const input = document.getElementById("symbolInput");
+const list = document.getElementById("stockList");
+
+list.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
+        input.value = e.target.textContent;
+        list.style.display = "none";
+    }
+});
+
+input.addEventListener("input", function () {
+    const filter = input.value.toUpperCase();
+    const items = list.getElementsByTagName("li");
+
+    list.style.display = "block";
+
+    for (let i = 0; i < items.length; i++) {
+        const txt = items[i].textContent;
+        items[i].style.display = txt.includes(filter) ? "" : "none";
+    }
+});
+</script>
+
+</body>
+</html>

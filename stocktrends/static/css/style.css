@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quintessential&display=swap');
+
+.almendra-regular {
+  font-family: "Almendra", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.almendra-bold {
+  font-family: "Almendra", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+#stock-title {
+    font-family: 'google-sans', sans-serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.prediction {
+    font-size: 20px;
+    margin: 10px 0 20px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.chart-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+canvas {
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+.current-price {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.trend.up {
+    color: #27ae60;
+}
+
+.trend.down {
+    color: #c0392b;
+}
